@@ -2,17 +2,18 @@
 const depositeBtn = document.getElementById("depositeBtn");
 depositeBtn.addEventListener("click", function(){
     const despositeNumber =getInput("depositeAmount");
-    
     updateAmount("currentAmount", despositeNumber);
     document.getElementById("depositeAmount").value = "";
-
     updateAmount("currentBlance",  despositeNumber);
 })
 
 const withdrawBtn = document.getElementById("withdrawBtn");
 withdrawBtn.addEventListener("click", function(){
     const withAmoun = getInput("withrawAmount");
-    console.log(withAmoun);
+    updateAmount("withdrawblance", withAmoun);
+    updateAmount("currentBlance", -1 * withAmoun);
+
+    document.getElementById("withrawAmount").value = "";
     
 })
 
